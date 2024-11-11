@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Image from 'next/image';
-import GooglePayButton from "@google-pay/button-react";
 
 const PaymentDetailsPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

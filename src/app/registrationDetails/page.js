@@ -1,30 +1,28 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense} from 'react';
 import { useSearchParams } from "next/navigation";
 import { FaEnvelope, FaCheckCircle } from 'react-icons/fa';
-import firebase from 'firebase/app';
-import { Timestamp } from 'firebase/firestore';
 
 
-export default function RegistrationDetailPage() {
+export default  function RegistrationDetailPage() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
-  const searchParams = useSearchParams();
+  const [searchParams] = useSearchParams();
+
   const phone = searchParams.get("phone");
   const [registrationData, setRegistrationData] = useState(null);
-
+  
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`/api/getRegistrationDetails/${phone}`);
+      const res = await fetch(`/api/getRegistrationDetails/${searchParams.get("phone")}`);
       if (res.ok) {
         const data = await res.json();
-        
         setRegistrationData(data);
       } else {
         setMessage('Registration not found');
       }
     };
-
+  
     fetchData();
   }, [phone]);
 
