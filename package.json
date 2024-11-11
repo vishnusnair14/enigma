@@ -1,0 +1,29 @@
+{
+  "name": "enigma",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@google-pay/button-react": "^3.1.0",
+    "enigma": "file:",
+    "firebase": "^11.0.1",
+    "next": "15.0.3",
+    "nodemailer": "^6.9.16",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-bottom-drawer": "^0.1.1",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "react-icons": "^5.3.0",
+    "react-modal": "^3.16.1"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}
